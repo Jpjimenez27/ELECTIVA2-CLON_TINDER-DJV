@@ -1,0 +1,25 @@
+{
+  "name": "electiva2-clon_tinder-djv",
+  "version": "1.0.0",
+  "description": "Proyecto de clon de tinder",
+  "homepage": "https://github.com/Jpjimenez27/ELECTIVA2-CLON_TINDER-DJV#readme",
+  "bugs": {
+    "url": "https://github.com/Jpjimenez27/ELECTIVA2-CLON_TINDER-DJV/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jpjimenez27/ELECTIVA2-CLON_TINDER-DJV.git"
+  },
+  "license": "ISC",
+  "author": "Juan Pablo Jimenez, Victor Vasquez y Diego Madrid",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mysql2": "^3.12.0"
+  }
+}

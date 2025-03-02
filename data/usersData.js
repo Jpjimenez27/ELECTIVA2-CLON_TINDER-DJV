@@ -1,5 +1,3 @@
-
-
 export const matches = [
     { like: true, userFrom: 1, userTo: 2 },
     { like: false, userFrom: 3, userTo: 1 },

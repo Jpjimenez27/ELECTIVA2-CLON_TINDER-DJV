@@ -1,10 +1,11 @@
 import express from 'express'
-import { availableUsers, getMatches, getUserInformationByName, getUsers, loginUser, registerLikesAndDislikes, } from "./../controllers/userController.js";
-import { validateGetMatches, validateGetUserInformationByName, validateLoginUser, validateRegisterLikesAndDislikes } from '../validators/userValidations.js';
+import { availableUsers, getMatches, getUserInformationByName, getUsers, loginUser, registerLikesAndDislikes,registerUser } from "./../controllers/userController.js";
+import { validateGetMatches, validateGetUserInformationByName, validateLoginUser, validateRegisterLikesAndDislikes,validateRegisterUser } from '../validators/userValidations.js';
 export const userRouter = express.Router();
 
 
 userRouter.get("/users", getUsers);
+userRouter.post("/user",validateRegisterUser,registerUser);
 userRouter.post("/loginUser",validateLoginUser, loginUser);
 userRouter.get("/getMatches/:id",validateGetMatches, getMatches);
 userRouter.get("/availableUsers", availableUsers);

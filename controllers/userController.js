@@ -1,4 +1,5 @@
-import { users, matches, loggedUser } from "../data/usersData.js";
+import { body } from "express-validator";
+import { users, matches, loggedUser, } from "../data/usersData.js";
 import pool from "../db.js";
 
 export const getUsers = (req, resp) => {
@@ -92,3 +93,22 @@ export const registerLikesAndDislikes = async (req, resp) => {
         });
     }
 }
+
+
+export const registerUser = async (req, resp) => {
+    try {
+        resp.status(201).send({
+            title: "Registro exitoso",
+            token: "Se ha registrado  exitosmente",
+            type: "success"
+        });
+    } catch (error) {
+        resp.status(500).send({
+            title: "Error",
+            description: "Ha ocurrido un error inesperado",
+            type: "error"
+        });
+    }
+}
+
+

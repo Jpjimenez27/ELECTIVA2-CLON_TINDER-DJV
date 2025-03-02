@@ -5,8 +5,8 @@
 Este proyecto es una réplica de Tinder, permitiendo a los usuarios crear perfiles, iniciar sesión, hacer "match" con otros usuarios y enviar mensajes.
   
   **Características:**
-  -Registro e inicio de sesión con autenticación JWT.
-  -Chat en tiempo real
+  - Registro e inicio de sesión con autenticación JWT.
+  - Chat en tiempo real
 
   **Requerimientos:**
   - Node.js 18+

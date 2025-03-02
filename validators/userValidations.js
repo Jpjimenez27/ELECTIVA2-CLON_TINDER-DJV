@@ -32,7 +32,7 @@ export const validateGetUserInformationByName = [
 export const validateRegisterLikesAndDislikes = [
     check("idUserFrom").exists().not().isEmpty().isInt().withMessage("El id del usuario debe ser un entero"),
     check("idUserTo").exists().not().isEmpty().isInt().withMessage("El id del usuario debe ser un entero"),
-    check("like").exists().not().isEmpty().isBoolean().withMessage("Por favor, ingrese una contraseña"),
+    check("like").exists().not().isEmpty().isBoolean().withMessage("El parametro debe ser un booleano"),
     (req, res, next) => {
         validateResult(req, res, next)
     }

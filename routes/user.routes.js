@@ -3,7 +3,6 @@ import { availableUsers, getMatches, getUserInformationByName, getUsers, loginUs
 import { validateGetMatches, validateGetUserInformationByName, validateLoginUser, validateRegisterLikesAndDislikes,validateRegisterUser } from '../validators/userValidations.js';
 export const userRouter = express.Router();
 
-
 userRouter.get("/users", getUsers);
 userRouter.post("/user",validateRegisterUser,registerUser);
 userRouter.post("/loginUser",validateLoginUser, loginUser);

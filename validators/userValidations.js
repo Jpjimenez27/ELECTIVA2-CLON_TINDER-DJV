@@ -12,7 +12,6 @@ export const validateRegisterUser = [
     }
 ]
 
-
 export const validateLoginUser = [
     check("email").exists().not().isEmpty().isEmail().withMessage("Por favor, ingrese un email válido"),
     check("password").exists().not().isEmpty().withMessage("Por favor, ingrese una contraseña"),
@@ -20,8 +19,6 @@ export const validateLoginUser = [
         validateResult(req, res, next)
     }
 ]
-
-
 
 export const validateGetMatches = [
     param("id").exists().withMessage("El ID es obligatorio")
@@ -48,7 +45,3 @@ export const validateRegisterLikesAndDislikes = [
         validateResult(req, res, next)
     }
 ]
-
-
-
-

@@ -29,10 +29,11 @@ export const getMatches = (req, resp) => {
 }
 
 export const loginUser = async (req, resp) => {
+    const {email, password} = req.body;
     try {
         resp.status(200).send({
             title: "Login exitoso",
-            token: "eyweewirniewnfkdsnfjkdsnf.smfkesnfioenwfionewif.sdfisnjfbesuif",
+            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNzA5MjM2MDAwLCJleHAiOjE3MDkyMzk2MDB9.R5J67nJhbb3YRjvgZ1vZT7zJFXCj_OuBBbdcbxDMEPM",
             type: "success"
         });
     } catch (error) {
@@ -45,9 +46,7 @@ export const loginUser = async (req, resp) => {
 }
 
 export const availableUsers = async (req, resp) => {
-
     try {
-        //Colocamos quemado el núemero 1, porque vamos a suponer que está logueado con una sesión de JWT
         const loggedUser = users.find(user => user.id === 1);
         const preferences = new Set(loggedUser.preferencias);
         const similarUsers = users.filter(user =>
@@ -64,7 +63,6 @@ export const availableUsers = async (req, resp) => {
 }
 
 export const getUserInformationByName = async (req, resp) => {
-
     try {
         const { name } = req.params;
         const user = users.find(x => x.nombre == name);
@@ -79,6 +77,7 @@ export const getUserInformationByName = async (req, resp) => {
 }
 
 export const registerLikesAndDislikes = async (req, resp) => {
+    const {idUserFrom, idUserTo, like} = req.body;
     try {
         resp.status(201).send({
             title: "Registro exitoso",
@@ -94,8 +93,8 @@ export const registerLikesAndDislikes = async (req, resp) => {
     }
 }
 
-
 export const registerUser = async (req, resp) => {
+    const {name, age, gender, location} = req.body;
     try {
         resp.status(201).send({
             title: "Registro exitoso",
@@ -110,5 +109,3 @@ export const registerUser = async (req, resp) => {
         });
     }
 }
-
-

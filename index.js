@@ -1,7 +1,8 @@
 import express from "express";
-import userRouter from "./routes/user.routes.js";
+import userRouter from "./src/application/routes/user.routes.js";
 import swaggerUI from "swagger-ui-express";
 import fs from "fs";
+
 
 const app = express();
 const PORT = 3000;

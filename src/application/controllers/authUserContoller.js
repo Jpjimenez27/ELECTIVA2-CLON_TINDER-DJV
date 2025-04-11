@@ -1,11 +1,13 @@
+import pool from "./../../infrastructure/databases/mySqlRepository.js";
 
 
-export const getUsers = (req, resp) => {
+export const getUsers = async (req, resp) => {
     try {
-
+        const [rows] = await pool.query("select * from hobbies");
         resp.status(200).send([{
             name: "juan",
-            lastName: "perez"
+            lastName: "perez",
+            rows
         }]);
     } catch (error) {
         resp.status(500).send({

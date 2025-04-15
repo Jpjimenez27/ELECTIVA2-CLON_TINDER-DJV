@@ -1,5 +1,6 @@
 import { BlobServiceClient } from '@azure/storage-blob';
-// const AZURE_STORAGE_CONNECTION_STRING = 'DefaultEndpointsProtocol=https;AccountName=flamematch;AccountKey=VFZu3YbDW4Wq2KTAWMEONSDuPE3zWmFhn71iMJsYNJUFqYBbFdlB8c5uNGFBtnSWsesErdmqFurh+AStnYz/Jg==;EndpointSuffix=core.windows.net';
+import { env } from 'process';
+const AZURE_STORAGE_CONNECTION_STRING = env.AZURE_STORAGE_SECRET_KEY;
 const blobServiceClient = BlobServiceClient.fromConnectionString(AZURE_STORAGE_CONNECTION_STRING);
 
 

@@ -1,7 +1,7 @@
 import { BlobServiceClient } from '@azure/storage-blob';
 import { env } from 'process';
-const AZURE_STORAGE_CONNECTION_STRING = env.AZURE_STORAGE_SECRET_KEY;
-const blobServiceClient = BlobServiceClient.fromConnectionString(AZURE_STORAGE_CONNECTION_STRING);
+const key = env.AZURE_STORAGE_SECRET_KEY;
+const blobServiceClient = BlobServiceClient.fromConnectionString(key);
 
 
 export const uploadBase64ImageToBlob = async (base64Image, containerName, blobName,type) => {

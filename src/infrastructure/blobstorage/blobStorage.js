@@ -1,0 +1,29 @@
+import { BlobServiceClient } from '@azure/storage-blob';
+import { env } from 'process';
+const key = env.AZURE_STORAGE_SECRET_KEY;
+const blobServiceClient = BlobServiceClient.fromConnectionString(key);
+
+
+export const uploadBase64ImageToBlob = async (base64Image, containerName, blobName,type) => {
+    try {
+        const buffer = Buffer.from(base64Image, 'base64');    
+        const containerClient = blobServiceClient.getContainerClient(containerName);
+        await containerClient.createIfNotExists({ access: 'container' });
+        
+
+        const blockBlobClient = containerClient.getBlockBlobClient(blobName);
+    
+
+        await blockBlobClient.uploadData(buffer, {
+            blobHTTPHeaders: { blobContentType: "image/"+type },
+        });
+    
+        console.log(`Imagen subida como: ${blobName}`);
+        return blockBlobClient.url; 
+    } catch (error) {
+        console.log(error);
+        
+    }
+    // Decodifica el base64
+  
+}

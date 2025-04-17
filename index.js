@@ -7,6 +7,8 @@ import { hobbiesRouter } from "./src/application/routes/hobbies.routes.js";
 import swaggerUI from "swagger-ui-express";
 import fs from "fs";
 
+
+
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {

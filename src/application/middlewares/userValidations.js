@@ -2,11 +2,8 @@ import { body, check, param } from 'express-validator'
 import { validateResult } from '../../../helpers/validateHelper.js'
 
 export const validateRegisterUser = [
-    body("name").exists().notEmpty().isString().withMessage("Ingrese el nombre"),
-    // check("name").exists().notEmpty().isString().withMessage("Ingrese el nombre"),
-    // check("age").exists().not().isEmpty().isInt().withMessage("Ingresar la edad"),
-    // check("gender").exists().not().isEmpty().isString().withMessage("Ingresar su genero"),
-    // check("location").exists().not().isEmpty().isString().withMessage("Ingresar la ubicacion"),
+    body("firstName").exists().notEmpty().isString().withMessage("Ingrese el nombre"),
+    body("email").exists().notEmpty().isString().isEmail().withMessage("Ingrese un email valido"),
     (req, res, next) => {
         validateResult(req, res, next)
     }

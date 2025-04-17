@@ -4,7 +4,7 @@ import { registerUserService } from '../../domain/services/authUserService.js';
 export const registerUser = async (req, resp) => {
     try {
         const body = req.body;
- 
+        
        const response = await registerUserService(body);
         resp.status(201).send({
             title: "Registro exitoso",

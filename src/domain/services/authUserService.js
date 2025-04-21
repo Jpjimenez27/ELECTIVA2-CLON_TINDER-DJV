@@ -29,9 +29,24 @@ export const registerUserService = async (body) => {
             await uploadBase64ImageToBlob(image.data.split(",")[1], "flamematch", `${imageName}.${image.type}`, image.type);
         });
 
-       await sendMailActivateAccount("123");
+        await sendMailActivateAccount("123");
 
     } catch (error) {
         throw error;
     }
+}
+export const verifyExistsUserService = async (email) => {
+    const [result] = await pool.query("CALL VerifyExistsUser(?)", [email.trim()]);
+    const count = result[0].length;
+    return count;
+}
+
+export const getPasswordUserByEmailService = async (email) => {
+    const [result] = await pool.query("CALL SP_GetPasswordUserByEmail(?)", [email.trim()]);
+
+    const data={
+       hashedPassword: result[0][0].password,
+       id: result[0][0].id
+    }
+    return data;
 }

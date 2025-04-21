@@ -28,7 +28,7 @@ export const sendMailActivateAccount = async (name, urlActive) => {
 
         // Opciones del correo
         const mailOptions = {
-            from: "flamematchapp@outlook.com",
+            from: "flamematchapp07@gmail.com",
             to: "diego.madrid@correo.tdea.edu.co",
             subject: "Activa tu cuenta❤️‍🔥🔥",
             html: htmlTemplate

@@ -4,6 +4,7 @@ import cors from "cors";
 import { Server } from "socket.io";
 import { authUserRouter } from "./src/application/routes/authUser.routes.js";
 import { hobbiesRouter } from "./src/application/routes/hobbies.routes.js";
+import { usersRouter } from "./src/application/routes/users.routes.js";
 import swaggerUI from "swagger-ui-express";
 import fs from "fs";
 
@@ -30,6 +31,7 @@ app.use(express.urlencoded({ limit: '20mb', extended: true }));
 app.use("/doc", swaggerUI.serve, swaggerUI.setup(swaggerDocumentation));
 app.use("/api/authusers", authUserRouter);
 app.use("/api/hobbies", hobbiesRouter);
+app.use("/api/users",usersRouter);
 
 io.on("connection", (socket) => {
   console.log("Nuevo cliente conectado: " + socket.id);

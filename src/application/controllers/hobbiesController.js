@@ -1,10 +1,10 @@
-import pool from "./../../infrastructure/databases/mySqlRepository.js";
+import  { poolPromise } from "./../../infrastructure/databases/mySqlRepository.js";
 
 export const getHobbies = async (req, resp) => {
     try {
-        const [rows] = await pool.query("CALL SP_GetHobbies();");       
-        resp.status(200).send(rows[0]);
-    
+        const pool = await poolPromise;
+        const result = await pool.request().query('SELECT Id as id, Name as name, Icon as icon from hobbies');
+        return resp.status(200).send(result.recordsets[0]);
     } catch (error) {
         console.log(error);
         

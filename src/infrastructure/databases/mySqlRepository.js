@@ -1,11 +1,14 @@
-import { createPool } from 'mysql2/promise';
 import { db } from './config.js'; 
+// db.js
+// const sql = require('mssql')s;
+import sql from 'mssql';
 
-const pool = createPool({
-  host: db.host,
-  user: db.user,
-  password: db.password,
-  database: db.database,
-});
+export const poolPromise = new sql.ConnectionPool(db)
+  .connect()
+  .then(pool => {
+    console.log('Conexión a SQL Server exitosa 🚀');
+    return pool;
+  })
+  .catch(err => console.error('Error en conexión a SQL Server:', err));
 
-export default pool;
+  export { sql };

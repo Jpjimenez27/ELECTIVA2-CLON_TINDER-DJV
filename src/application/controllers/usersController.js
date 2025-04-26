@@ -1,13 +1,10 @@
-import { getUserInformationService } from "../../domain/services/usersService.js";
+import { getLoggedUserInformationService } from "../../domain/services/usersService.js";
 
-export const getUserInformation = async (req, resp) => {
+export const getLoggedUserInformation = async (req, resp) => {
     try {
         const { userId } = req;
-        const user = await getUserInformationService(userId);
-
-        return resp.status(200).send(
-            user
-        );
+        const response = await getLoggedUserInformationService(userId);
+        return resp.status(200).send(response);
 
     } catch (error) {
         return resp.status(500).send({

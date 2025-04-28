@@ -11,8 +11,6 @@ export const sendMailActivateAccount = async (name, urlActive) => {
         const __filename = fileURLToPath(import.meta.url);
         const __dirname = dirname(__filename);
         const templatePath = path.join(__dirname, "..", "..", "application", "templates", "SendActivateAccountTemplate.html");
-        console.log(templatePath);
-
         const htmlTemplate = (await fs.readFile(templatePath, 'utf-8')).replace("{Nombre}","Diego Madrid");
         // Configurar el transporter con Outlook SMTP
         const transporter = nodemailer.createTransport({
@@ -26,7 +24,6 @@ export const sendMailActivateAccount = async (name, urlActive) => {
             }
         });
 
-        // Opciones del correo
         const mailOptions = {
             from: "flamematchapp07@gmail.com",
             to: "diego.madrid@correo.tdea.edu.co",
@@ -34,10 +31,10 @@ export const sendMailActivateAccount = async (name, urlActive) => {
             html: htmlTemplate
         };
 
-        // Enviar correo
         const info = await transporter.sendMail(mailOptions);
-
+        return true;
     } catch (err) {
-        console.error('❌ Error al enviar el correo:', err);
+        throw new Error("Error inesperado enviando correo");
+        
     }
 };

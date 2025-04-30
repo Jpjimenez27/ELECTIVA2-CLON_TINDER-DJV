@@ -1,13 +1,34 @@
 import { body, check, param } from 'express-validator'
 import { validateResult } from '../../../helpers/validateHelper.js'
 
+
 export const validateRegisterUser = [
-    body("firstName").exists().notEmpty().isString().withMessage("Ingrese el nombre"),
-    body("email").exists().notEmpty().isString().isEmail().withMessage("Ingrese un email valido"),
+    
+    body("firstName").exists().notEmpty().isString().withMessage("Primer nombre es obligatorio"),
+    body("lastName").exists().notEmpty().isString().withMessage("Primer apellido es obligatorio"),
+    body("email").exists().notEmpty().isEmail().withMessage("Ingresar un email válido"),
+    body("birthDate").exists().notEmpty().isString().withMessage("La fecha de nacimiento es obligatoria"),
+    body("gender").exists().notEmpty().isString().withMessage("El género es obligatorio"),
+    body("country").exists().notEmpty().isString().withMessage("El país es obligatorio"),
+    body("city").exists().notEmpty().isString().withMessage("La ciudad es obligatoria"),
+    body("height").exists().notEmpty().isNumeric().withMessage("La estatura es obligatoria"),
+    body("password").exists().notEmpty().isString().isLength({ min: 8 }).withMessage("La contraseña con minimo 8 caracteres"),
+    body("description").exists().notEmpty().isString().isLength({ min: 20, max: 250 }).withMessage("La descripción debe tener entre 20 y 250 caracteres"),
+    body("hobbies").isArray({ min: 3 }).withMessage("Debe tener al menos 3 hobbies"),
+    body("images").isArray({ min: 1, max: 5 }).withMessage("Debe tener entre 1 y 5 fotos"),
+
     (req, res, next) => {
-        validateResult(req, res, next)
+        validateResult(req, res, next);
     }
-]
+];
+
+// export const validateRegisterUser = [
+//     body("firstName").exists().notEmpty().isString().withMessage("Ingrese el nombre"),
+//     body("email").exists().notEmpty().isString().isEmail().withMessage("Ingrese un email valido"),
+//     (req, res, next) => {
+//         validateResult(req, res, next)
+//     }
+// ]
 
 // export const validateLoginUser = [
 //     check("email").exists().not().isEmpty().isEmail().withMessage("Por favor, ingrese un email válido"),

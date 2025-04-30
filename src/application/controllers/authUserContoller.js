@@ -10,6 +10,8 @@ export const registerUser = async (req, resp) => {
     try {
         const body = req.body;
 
+        return
+
         const response = await registerUserService(body);
         
         return resp.status(201).send({

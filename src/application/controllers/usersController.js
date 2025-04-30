@@ -31,3 +31,20 @@ export const getUserInformationForMatch = async (req, resp) => {
         });
     }
 }
+
+export const registerMatch= async(req,resp)=>{
+    try {
+        console.log(req.body);
+        return resp.status(200).send({
+            title: "Registro exitoso",
+            description: "Se ha registrado el match exitosmente",
+            type: "success"
+        });
+    } catch (error) {
+        return resp.status(500).send({
+            title: "Error",
+            description: "Ha ocurrido un error inesperado registrando el match",
+            type: "error"
+        });
+    }
+}

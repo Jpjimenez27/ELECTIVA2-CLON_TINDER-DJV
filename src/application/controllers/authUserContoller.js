@@ -11,7 +11,7 @@ export const registerUser = async (req, resp) => {
         const body = req.body;
 
         const response = await registerUserService(body);
-
+        
         return resp.status(201).send({
             title: "Registro exitoso",
             description: "Te has registrado exitosamente, ahora revisa tu correo para activar tu cuenta",

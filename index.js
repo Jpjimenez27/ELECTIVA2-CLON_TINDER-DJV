@@ -43,8 +43,12 @@ io.on("connection", (socket) => {
 
 
   socket.on("send_message", ({ room, body }) => {
-    console.log("Mensaje recibido:", body);
     io.to(room).emit("receive_message", body);
+  });
+
+  
+  socket.on("send_match", ({ room, body }) => {    
+    io.to(room).emit("receive_match", body);
   });
 
   socket.on("disconnect", () => {

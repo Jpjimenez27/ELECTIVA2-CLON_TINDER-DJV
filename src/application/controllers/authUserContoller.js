@@ -10,7 +10,11 @@ export const registerUser = async (req, resp) => {
     try {
         const body = req.body;
 
-        return
+        return resp.status(201).send({
+            title: "Registro exitoso",
+            description: "Te has registrado exitosamente, ahora revisa tu correo para activar tu cuenta",
+            type: "success"
+        });
 
         const response = await registerUserService(body);
         

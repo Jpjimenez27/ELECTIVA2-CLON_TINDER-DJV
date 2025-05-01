@@ -15,3 +15,20 @@ export const registerMatchService = async (userFrom, userTo) => {
         throw new Error("Ha ocurrido un error inesperado obteniendo la información del usuario");
     }
 }
+
+export const acceptMatchService = async (userFrom, userTo,isMatch) => {
+    try {
+        const pool = await poolPromise;
+        const result = await pool.request()
+            .input("option", sql.VarChar(50), "AcceptMacth")
+            .input("UserFrom", sql.Int, userTo)
+            .input("UserTo", sql.Int, userFrom)
+            .input("IsMatch",sql.TinyInt,isMatch)
+            .execute("SP_MATCHES");
+ 
+        return 1;
+    } catch (error) {
+        console.log(error);
+        throw new Error("Ha ocurrido un error inesperado obteniendo la información del usuario");
+    }
+}

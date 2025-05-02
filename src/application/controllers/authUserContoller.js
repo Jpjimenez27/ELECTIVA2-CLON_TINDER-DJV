@@ -2,17 +2,16 @@
 import { getUserPasswordByEmail, registerUserService, verifyExistsUserService } from '../../domain/services/authUserService.js';
 import { validatePassword } from "../../domain/services/hashPasswordService.js";
 import { generateToken } from '../../domain/services/jwtConfiguratorService.js';
-import { getLoggedUserInformationService } from '../../domain/services/usersService.js';
-
+//import { getLoggedUserInformationService } from '../../domain/services/usersService.js';
 
 export const registerUser = async (req, resp) => {
 
     try {
         const body = req.body;
 
-        return
+        // return
 
-        const response = await registerUserService(body);
+        // const response = await registerUserService(body);
         
         return resp.status(201).send({
             title: "Registro exitoso",
@@ -21,7 +20,6 @@ export const registerUser = async (req, resp) => {
         });
     } catch (error) {
         console.log(error);
-
         return resp.status(500).send({
             title: "Error",
             description: "Ha ocurrido un error inesperado reistrando el usuario",
@@ -29,6 +27,7 @@ export const registerUser = async (req, resp) => {
         });
     }
 };
+
 export const verifyExistsUser = async (req, resp) => {
     try {
         const { email } = req.params;
@@ -42,6 +41,7 @@ export const verifyExistsUser = async (req, resp) => {
         });
     }
 }
+
 export const login = async (req, resp) => {
     try {
         const { email, password } = req.body;
@@ -77,4 +77,3 @@ export const login = async (req, resp) => {
         });
     }
 }
-

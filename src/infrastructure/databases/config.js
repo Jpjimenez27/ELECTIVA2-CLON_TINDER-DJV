@@ -5,10 +5,10 @@ export const db = {
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
 
-  server: process.env.DB_HOST, // o el nombre/ip del servidor
+  server: process.env.DB_HOST,
   database: process.env.DB_NAME,
   options: {
-    encrypt: true, // true si estás usando Azure
-    trustServerCertificate: true // en local normalmente es necesario
+    encrypt: true, 
+    trustServerCertificate: true
   }
 };

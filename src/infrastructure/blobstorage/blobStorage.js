@@ -3,7 +3,6 @@ import { BlobServiceClient } from '@azure/storage-blob';
 const key = "DefaultEndpointsProtocol=https;AccountName=flamematch;AccountKey=VFZu3YbDW4Wq2KTAWMEONSDuPE3zWmFhn71iMJsYNJUFqYBbFdlB8c5uNGFBtnSWsesErdmqFurh+AStnYz/Jg==;EndpointSuffix=core.windows.net";
 const blobServiceClient = BlobServiceClient.fromConnectionString(key);
 
-
 export const uploadBase64ImageToBlob = async (base64Image, containerName, blobName,type) => {
     try {
         const buffer = Buffer.from(base64Image, 'base64');    
@@ -24,6 +23,4 @@ export const uploadBase64ImageToBlob = async (base64Image, containerName, blobNa
         console.log(error);
         
     }
-    // Decodifica el base64
-  
 }

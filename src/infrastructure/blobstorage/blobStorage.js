@@ -24,3 +24,17 @@ export const uploadBase64ImageToBlob = async (base64Image, containerName, blobNa
         
     }
 }
+
+export function socketErrorHandler(callback) {
+    return async (...args) => {
+      const socket = args[args.length - 1]; // el último argumento debería ser el socket o tener acceso a él
+      try {
+        await callback(...args);
+      } catch (err) {
+        console.error("Error en socket event:", err);
+        socket.emit("error_message", {
+          message: err.message || "Error interno del servidor.",
+        });
+      }
+    };
+  }

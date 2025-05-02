@@ -38,22 +38,48 @@ export const validateRegisterUser = [
 //     }
 // ]
 
-// export const validateGetMatches = [
-//     param("id").exists().withMessage("El ID es obligatorio")
-//         .not().isEmpty().withMessage("El ID no puede estar vacío")
-//         .isInt().withMessage("El ID debe ser un número entero"),
-//     (req, res, next) => {
-//         validateResult(req, res, next)
-//     }
-// ]
+export const validateLogin = [
+    body("email").exists().withMessage("El correo es obligatorio")
+        .not().isEmpty().withMessage("El correo no puede estar vacío").isEmail().withMessage("El correo es invalido"),
+    body("password").exists().withMessage("La contraseña es obligatoria").not().isEmpty().withMessage("La contraseña no puede estar vacia"),
+    (req, res, next) => {
+        validateResult(req, res, next)
+    }
+]
 
-// export const validateGetUserInformationByName = [
-//     param("name").exists().withMessage("El nombre es obligatorio")
-//         .not().isEmpty().withMessage("El nombre no puede estar vacío"),
-//     (req, res, next) => {
-//         validateResult(req, res, next)
-//     }
-// ]
+export const validateExistsUser = [
+    body("email").exists().withMessage("El correo es obligatorio")
+        .not().isEmpty().withMessage("El correo no puede estar vacío").isEmail().withMessage("El correo es invalido"),
+    (req, res, next) => {
+        validateResult(req, res, next)
+    }
+]
+
+export const validateAccpetMatch= [
+    body("userTo").exists().withMessage("El id es obligatorio")
+        .not().isEmpty().withMessage("El id no puede estar vacío").isInt().withMessage("El id debe ser entero"),
+    body("isMatch").exists().withMessage("iMatch es obligatorio").not().isEmpty().withMessage("isMatch no puede ir vacío").isBoolean().withMessage("debe ser un boolenao"),
+    (req, res, next) => {
+        validateResult(req, res, next)
+    }
+
+]
+
+export const validateRegisterMatch = [
+    body("userTo").exists().withMessage("El id es obligatorio")
+        .not().isEmpty().withMessage("El id no puede estar vacío").isInt().withMessage("El id debe ser entero"),
+    (req, res, next) => {
+        validateResult(req, res, next)
+    }
+]
+
+export const validateGetUserInformationByName = [
+    param("email").exists().withMessage("El nombre es obligatorio")
+        .not().isEmpty().isEmail().withMessage("El nombre no puede estar vacío"),
+    (req, res, next) => {
+        validateResult(req, res, next)
+    }
+]
 
 // export const validateRegisterLikesAndDislikes = [
 //     check("idUserFrom").exists().not().isEmpty().isInt().withMessage("El id del usuario debe ser un entero"),

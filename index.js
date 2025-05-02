@@ -7,6 +7,7 @@ import { hobbiesRouter } from "./src/application/routes/hobbies.routes.js";
 import { usersRouter } from "./src/application/routes/users.routes.js";
 import swaggerUI from "swagger-ui-express";
 import fs from "fs";
+import { socketErrorHandler } from "./src/infrastructure/blobstorage/blobStorage.js";
 
 
 
@@ -36,31 +37,27 @@ app.use("/api/users",usersRouter);
 io.on("connection", (socket) => {
   console.log("Nuevo cliente conectado: " + socket.id);
 
-  socket.on("join_room", (room) => {
+  socket.on("join_room", socketErrorHandler(async (room) => {
     socket.join(room);
     console.log(`Usuario unido a la sala ${room}`);
+  }));
 
-  });
-
-
-  socket.on("send_message", ({ room, body }) => {
+  socket.on("send_message", socketErrorHandler(async ({ room, body }) => {
     io.to(room).emit("receive_message", body);
-  });
+  }));
 
-  
-  socket.on("send_match", ({ room, body }) => {    
+  socket.on("send_match", socketErrorHandler(async ({ room, body }) => {
     io.to(room).emit("receive_match", body);
-  });
+  }));
 
-  socket.on("send_messages", ({ room, body }) => {    
+  socket.on("send_messages", socketErrorHandler(async ({ room, body }) => {
     io.to(room).emit("receive_messages", body);
-  });
+  }));
 
   socket.on("disconnect", () => {
     console.log("Cliente desconectado: " + socket.id);
   });
 });
-
 server.listen(PORT, () => {
   console.log("Express.js está corriendo en el puerto " + PORT);
 });

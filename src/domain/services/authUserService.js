@@ -3,7 +3,7 @@ import { poolPromise, sql } from "../../infrastructure/databases/mySqlRepository
 
 import { hashPassword } from "./hashPasswordService.js";
 import { generateGuid } from "./randomStringService.js";
-import { sendMailActivateAccount } from "./sendMailService.js";
+//import { sendMailActivateAccount } from "./sendMailService.js";
 
 export const registerUserService = async (body) => {
     try {
@@ -11,7 +11,6 @@ export const registerUserService = async (body) => {
         const activateUrl = generateGuid();
         const hashedPssword = await hashPassword(password);
         const pool = await poolPromise;
-
 
         const result = await pool.request()
             .input("option", sql.VarChar(20), "registerUser")
@@ -85,4 +84,4 @@ export const getUserPasswordByEmail = async (email) => {
     const response = result.recordsets[0][0].password;
     const userId = result.recordsets[0][0].id;
     return { response, userId };
-}
+} 

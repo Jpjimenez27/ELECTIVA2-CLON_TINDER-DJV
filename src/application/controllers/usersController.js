@@ -6,8 +6,6 @@ export const getLoggedUserInformation = async (req, resp) => {
         const { userId } = req;
         const response = await getLoggedUserInformationService(userId);
         return resp.status(200).send(response);
-
-
     } catch (error) {
         return resp.status(500).send({
             title: "Error",
@@ -22,8 +20,6 @@ export const getUserInformationForMatch = async (req, resp) => {
         const { userId } = req;
         const response = await getUserInformationForMatchService(userId);
         return resp.status(200).send(response);
-
-
     } catch (error) {
         return resp.status(500).send({
             title: "Error",
@@ -42,7 +38,7 @@ export const registerMatch = async (req, resp) => {
         await registerMatchService(userId, userTo);
         return resp.status(200).send({
             title: "Registro exitoso",
-            description: "Se ha registrado el match exitosmente",
+            description: "Se ha registrado el match exitosamente",
             type: "success"
         });
     } catch (error) {

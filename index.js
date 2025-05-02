@@ -39,6 +39,7 @@ io.on("connection", (socket) => {
   socket.on("join_room", (room) => {
     socket.join(room);
     console.log(`Usuario unido a la sala ${room}`);
+
   });
 
 
@@ -49,6 +50,10 @@ io.on("connection", (socket) => {
   
   socket.on("send_match", ({ room, body }) => {    
     io.to(room).emit("receive_match", body);
+  });
+
+  socket.on("send_messages", ({ room, body }) => {    
+    io.to(room).emit("receive_messages", body);
   });
 
   socket.on("disconnect", () => {

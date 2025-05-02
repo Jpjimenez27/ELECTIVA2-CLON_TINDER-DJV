@@ -52,8 +52,10 @@ export const registerUserService = async (body) => {
             await uploadBase64ImageToBlob(image.data.split(",")[1], "flamematch", `${imageName}.${image.type}`, image.type);
 
         });
-
+        await sendMailActivateAccount(`${firstName} ${lastName}`,activateUrl,email);
     } catch (error) {
+        console.log(error);
+        
         throw error;
     }
 }

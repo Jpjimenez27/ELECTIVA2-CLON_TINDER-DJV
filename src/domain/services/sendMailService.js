@@ -20,11 +20,13 @@ export const sendMailActivateAccount = async (name, urlActive, email) => {
     );
     console.log(templatePath);
 
-    const htmlTemplate = (await fs.readFile(templatePath, "utf-8"))
-      .replace("{Nombre}", name)
-      .replace("{urlActive}", urlActive)
+    const htmlTemplate = await fs.readFile(templatePath, "utf-8");
 
-    // Configurar el transporter con Outlook SMTP
+    // Replace placeholders with actual values.  Corrected placeholder name.
+    const htmlContent = htmlTemplate
+      .replace("{Nombre}", name)
+      .replace("{urlActivate}", urlActive);
+      
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -41,7 +43,7 @@ export const sendMailActivateAccount = async (name, urlActive, email) => {
       from: "flamematchapp07@gmail.com",
       to: email,
       subject: "Activa tu cuenta",
-      html: htmlTemplate,
+      html: htmlContent,
     };
 
     // Enviar correo

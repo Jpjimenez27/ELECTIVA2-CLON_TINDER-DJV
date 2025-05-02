@@ -64,3 +64,22 @@ export const getHobbiesByUserId = async (userId) => {
         throw new Error("Ha ocurrido un error inesperado obteniendo la información del usuario");
     }
 }
+
+export const getChatsListService = async (userId) => {
+    try {
+        const pool = await poolPromise;
+        const result = await pool.request()
+            .input("option", sql.VarChar(50), "GetUserChats")
+            .input("Id", sql.Int, userId)
+            .execute("SP_USERS");
+        const response = result.recordset;
+
+        for await (const element of response) {
+            element.images = await getUserImagesService(element.id);
+        }
+        return response;
+    } catch (error) {
+        console.log(error);
+        throw new Error("Ha ocurrido un error inesperado obteniendo la información del usuario");
+    }
+}

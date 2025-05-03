@@ -3,7 +3,7 @@ import { validateResult } from '../../../helpers/validateHelper.js'
 
 
 export const validateRegisterUser = [
-    
+
     body("firstName").exists().notEmpty().isString().withMessage("Primer nombre es obligatorio"),
     body("lastName").exists().notEmpty().isString().withMessage("Primer apellido es obligatorio"),
     body("email").exists().notEmpty().isEmail().withMessage("Ingresar un email válido"),
@@ -22,22 +22,6 @@ export const validateRegisterUser = [
     }
 ];
 
-// export const validateRegisterUser = [
-//     body("firstName").exists().notEmpty().isString().withMessage("Ingrese el nombre"),
-//     body("email").exists().notEmpty().isString().isEmail().withMessage("Ingrese un email valido"),
-//     (req, res, next) => {
-//         validateResult(req, res, next)
-//     }
-// ]
-
-// export const validateLoginUser = [
-//     check("email").exists().not().isEmpty().isEmail().withMessage("Por favor, ingrese un email válido"),
-//     check("password").exists().not().isEmpty().withMessage("Por favor, ingrese una contraseña"),
-//     (req, res, next) => {
-//         validateResult(req, res, next)
-//     }
-// ]
-
 export const validateLogin = [
     body("email").exists().withMessage("El correo es obligatorio")
         .not().isEmpty().withMessage("El correo no puede estar vacío").isEmail().withMessage("El correo es invalido"),
@@ -55,7 +39,7 @@ export const validateExistsUser = [
     }
 ]
 
-export const validateAccpetMatch= [
+export const validateAccpetMatch = [
     body("userTo").exists().withMessage("El id es obligatorio")
         .not().isEmpty().withMessage("El id no puede estar vacío").isInt().withMessage("El id debe ser entero"),
     body("isMatch").exists().withMessage("iMatch es obligatorio").not().isEmpty().withMessage("isMatch no puede ir vacío").isBoolean().withMessage("debe ser un boolenao"),
@@ -81,11 +65,11 @@ export const validateGetUserInformationByName = [
     }
 ]
 
-// export const validateRegisterLikesAndDislikes = [
-//     check("idUserFrom").exists().not().isEmpty().isInt().withMessage("El id del usuario debe ser un entero"),
-//     check("idUserTo").exists().not().isEmpty().isInt().withMessage("El id del usuario debe ser un entero"),
-//     check("like").exists().not().isEmpty().isBoolean().withMessage("El parametro debe ser un booleano"),
-//     (req, res, next) => {
-//         validateResult(req, res, next)
-//     }
-// ]
+export const validateChat = [
+    body("idMatch").exists().withMessage("ID de match es obligatorio")
+        .not().isEmpty().isInt().withMessage("El ID debe ser un número entero"),
+    body("message").exists().withMessage("El mensaje es obligatorio"),
+    (req, res, next) => {
+        validateResult(req, res, next)
+    }
+]

@@ -1,41 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1746235768490" clover="3.2.0">
-  <project timestamp="1746235768491" name="All files">
-    <metrics statements="216" coveredstatements="105" conditionals="6" coveredconditionals="4" methods="32" coveredmethods="15" elements="254" coveredelements="124" complexity="0" loc="216" ncloc="216" packages="4" files="12" classes="12"/>
+<coverage generated="1746248189204" clover="3.2.0">
+  <project timestamp="1746248189205" name="All files">
+    <metrics statements="168" coveredstatements="94" conditionals="2" coveredconditionals="0" methods="24" coveredmethods="16" elements="194" coveredelements="110" complexity="0" loc="168" ncloc="168" packages="4" files="10" classes="10"/>
     <package name="application.controllers">
-      <metrics statements="77" coveredstatements="54" conditionals="4" coveredconditionals="4" methods="10" coveredmethods="7"/>
-      <file name="authUserContoller.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\application\controllers\authUserContoller.js">
-        <metrics statements="28" coveredstatements="27" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="29" count="3" type="stmt"/>
-        <line num="30" count="2" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
-        <line num="32" count="2" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="43" count="3" type="stmt"/>
-        <line num="44" count="4" type="stmt"/>
-        <line num="45" count="4" type="stmt"/>
-        <line num="46" count="4" type="stmt"/>
-        <line num="47" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="48" count="1" type="stmt"/>
-        <line num="54" count="2" type="stmt"/>
-        <line num="55" count="2" type="stmt"/>
-        <line num="56" count="2" type="stmt"/>
-        <line num="57" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="58" count="1" type="stmt"/>
-        <line num="64" count="1" type="stmt"/>
-        <line num="65" count="1" type="stmt"/>
-        <line num="69" count="1" type="stmt"/>
-        <line num="71" count="1" type="stmt"/>
-      </file>
-      <file name="hobbiesController.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\application\controllers\hobbiesController.js">
+      <metrics statements="55" coveredstatements="54" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
+      <file name="hobbiesController.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\application\controllers\hobbiesController.js">
         <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -44,133 +13,106 @@
         <line num="7" count="1" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
       </file>
-      <file name="usersController.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\application\controllers\usersController.js">
-        <metrics statements="43" coveredstatements="22" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="3"/>
-        <line num="4" count="1" type="stmt"/>
+      <file name="usersController.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\application\controllers\usersController.js">
+        <metrics statements="49" coveredstatements="49" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+        <line num="4" count="3" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
         <line num="19" count="2" type="stmt"/>
         <line num="20" count="2" type="stmt"/>
-        <line num="21" count="2" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="2" type="stmt"/>
-        <line num="35" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
         <line num="36" count="2" type="stmt"/>
         <line num="37" count="2" type="stmt"/>
         <line num="38" count="2" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="45" count="2" type="stmt"/>
-        <line num="54" count="1" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="61" count="0" type="stmt"/>
-        <line num="67" count="0" type="stmt"/>
-        <line num="69" count="0" type="stmt"/>
-        <line num="77" count="1" type="stmt"/>
-        <line num="78" count="0" type="stmt"/>
-        <line num="79" count="0" type="stmt"/>
-        <line num="80" count="0" type="stmt"/>
-        <line num="81" count="0" type="stmt"/>
-        <line num="83" count="0" type="stmt"/>
-        <line num="85" count="0" type="stmt"/>
-        <line num="93" count="1" type="stmt"/>
-        <line num="94" count="0" type="stmt"/>
-        <line num="95" count="0" type="stmt"/>
-        <line num="96" count="0" type="stmt"/>
-        <line num="97" count="0" type="stmt"/>
-        <line num="98" count="0" type="stmt"/>
-        <line num="104" count="0" type="stmt"/>
-        <line num="106" count="0" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="54" count="3" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
+        <line num="60" count="2" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="77" count="3" type="stmt"/>
+        <line num="78" count="2" type="stmt"/>
+        <line num="79" count="2" type="stmt"/>
+        <line num="80" count="2" type="stmt"/>
+        <line num="81" count="1" type="stmt"/>
+        <line num="83" count="1" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+        <line num="93" count="3" type="stmt"/>
+        <line num="94" count="2" type="stmt"/>
+        <line num="95" count="2" type="stmt"/>
+        <line num="96" count="2" type="stmt"/>
+        <line num="97" count="2" type="stmt"/>
+        <line num="98" count="1" type="stmt"/>
+        <line num="104" count="1" type="stmt"/>
+        <line num="106" count="1" type="stmt"/>
+        <line num="114" count="3" type="stmt"/>
+        <line num="115" count="2" type="stmt"/>
+        <line num="116" count="2" type="stmt"/>
+        <line num="117" count="2" type="stmt"/>
+        <line num="118" count="1" type="stmt"/>
+        <line num="120" count="1" type="stmt"/>
+        <line num="122" count="1" type="stmt"/>
       </file>
     </package>
     <package name="domain.services">
-      <metrics statements="115" coveredstatements="39" conditionals="0" coveredconditionals="0" methods="17" coveredmethods="6"/>
-      <file name="authUserService.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\authUserService.js">
-        <metrics statements="30" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="1"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
-        <line num="56" count="1" type="stmt"/>
-        <line num="58" count="1" type="stmt"/>
-        <line num="62" count="3" type="stmt"/>
-        <line num="64" count="0" type="stmt"/>
-        <line num="65" count="0" type="stmt"/>
-        <line num="66" count="0" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
-        <line num="71" count="0" type="stmt"/>
-        <line num="73" count="0" type="stmt"/>
-        <line num="77" count="3" type="stmt"/>
-        <line num="78" count="0" type="stmt"/>
-        <line num="79" count="0" type="stmt"/>
-        <line num="84" count="0" type="stmt"/>
-        <line num="85" count="0" type="stmt"/>
-        <line num="86" count="0" type="stmt"/>
-      </file>
-      <file name="hashPasswordService.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\hashPasswordService.js">
+      <metrics statements="95" coveredstatements="28" conditionals="2" coveredconditionals="0" methods="13" coveredmethods="6"/>
+      <file name="hashPasswordService.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\hashPasswordService.js">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="10" count="5" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
         <line num="11" count="3" type="stmt"/>
         <line num="12" count="3" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
       </file>
-      <file name="jwtConfiguratorService.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\jwtConfiguratorService.js">
+      <file name="jwtConfiguratorService.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\jwtConfiguratorService.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
       </file>
-      <file name="matchesService.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\matchesService.js">
-        <metrics statements="15" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
+      <file name="matchesService.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\matchesService.js">
+        <metrics statements="15" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="4" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
       </file>
-      <file name="randomStringService.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\randomStringService.js">
+      <file name="randomStringService.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\randomStringService.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-      </file>
-      <file name="usersService.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\usersService.js">
-        <metrics statements="55" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+      <file name="usersService.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\usersService.js">
+        <metrics statements="65" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="7" coveredmethods="0"/>
+        <line num="3" count="4" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
@@ -180,60 +122,70 @@
         <line num="13" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
+        <line num="43" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="44" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
         <line num="55" count="0" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
+        <line num="59" count="4" type="stmt"/>
         <line num="60" count="0" type="stmt"/>
         <line num="61" count="0" type="stmt"/>
-        <line num="63" count="0" type="stmt"/>
-        <line num="64" count="0" type="stmt"/>
-        <line num="68" count="1" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
         <line num="69" count="0" type="stmt"/>
         <line num="70" count="0" type="stmt"/>
-        <line num="72" count="0" type="stmt"/>
-        <line num="73" count="0" type="stmt"/>
+        <line num="74" count="4" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
         <line num="79" count="0" type="stmt"/>
-        <line num="80" count="0" type="stmt"/>
-        <line num="82" count="0" type="stmt"/>
-        <line num="83" count="0" type="stmt"/>
-        <line num="88" count="1" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
         <line num="89" count="0" type="stmt"/>
-        <line num="90" count="0" type="stmt"/>
-        <line num="91" count="0" type="stmt"/>
+        <line num="94" count="4" type="stmt"/>
         <line num="95" count="0" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
         <line num="97" count="0" type="stmt"/>
-        <line num="98" count="0" type="stmt"/>
-        <line num="100" count="0" type="stmt"/>
-        <line num="102" count="0" type="stmt"/>
+        <line num="101" count="0" type="stmt"/>
         <line num="103" count="0" type="stmt"/>
+        <line num="104" count="0" type="stmt"/>
+        <line num="106" count="0" type="stmt"/>
+        <line num="108" count="0" type="stmt"/>
+        <line num="109" count="0" type="stmt"/>
+        <line num="113" count="4" type="stmt"/>
+        <line num="114" count="0" type="stmt"/>
+        <line num="115" count="0" type="stmt"/>
+        <line num="116" count="0" type="stmt"/>
+        <line num="120" count="0" type="stmt"/>
+        <line num="121" count="0" type="stmt"/>
+        <line num="123" count="0" type="stmt"/>
+        <line num="124" count="0" type="stmt"/>
       </file>
     </package>
     <package name="infrastructure.blobstorage">
-      <metrics statements="18" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
-      <file name="blobStorage.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\infrastructure\blobstorage\blobStorage.js">
-        <metrics statements="18" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
+      <metrics statements="12" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="blobStorage.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\infrastructure\blobstorage\blobStorage.js">
+        <metrics statements="12" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
@@ -243,27 +195,21 @@
         <line num="20" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="23" count="2" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
       </file>
     </package>
     <package name="infrastructure.databases">
       <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-      <file name="config.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\infrastructure\databases\config.js">
+      <file name="config.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\infrastructure\databases\config.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="2" count="6" type="stmt"/>
-        <line num="4" count="6" type="stmt"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
       </file>
-      <file name="mySqlRepository.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\infrastructure\databases\mySqlRepository.js">
+      <file name="mySqlRepository.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\infrastructure\databases\mySqlRepository.js">
         <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="6" count="6" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
-        <line num="10" count="4" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
       </file>
     </package>
   </project>

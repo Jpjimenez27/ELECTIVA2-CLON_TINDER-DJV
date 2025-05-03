@@ -32,5 +32,3 @@ export const acceptMatchService = async (userFrom, userTo,isMatch) => {
         throw new Error("Ha ocurrido un error inesperado obteniendo la información del usuario");
     }
 }
-
-

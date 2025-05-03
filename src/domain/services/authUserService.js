@@ -1,10 +1,8 @@
 import { uploadBase64ImageToBlob } from "../../infrastructure/blobstorage/blobStorage.js";
 import { poolPromise, sql } from "../../infrastructure/databases/mySqlRepository.js";
-
 import { hashPassword } from "./hashPasswordService.js";
 import { generateGuid } from "./randomStringService.js";
 import { sendMailActivateAccount } from "./sendMailService.js";
-//import { sendMailActivateAccount } from "./sendMailService.js";
 
 export const registerUserService = async (body) => {
     try {

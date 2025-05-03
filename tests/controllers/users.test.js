@@ -1,6 +1,5 @@
 import { getLoggedUserInformation, getUserInformationForMatch } from "../../src/application/controllers/usersController";
 import { getLoggedUserInformationService, getUserInformationForMatchService } from "../../src/domain/services/usersService";
-import { registerMatch } from "../../src/application/controllers/usersController";
 
 jest.mock("../../src/domain/services/usersService");
 
@@ -80,54 +79,6 @@ describe("getUserInformationForMatch", () => {
         expect(mockResponse.send).toHaveBeenCalledWith({
             title: "Error",
             description: "Ha ocurrido un error inesperado obteniendo la infromación del usuario",
-            type: "error"
-        });
-    });
-});
-
-describe("registerMatch", () => {
-    let mockRequest, mockResponse;
-
-    beforeEach(() => {
-        mockRequest = { body: { userId: 31, userTo: 28 } };
-        mockResponse = {
-            status: jest.fn().mockReturnThis(),
-            send: jest.fn()
-        };
-    });
-
-    it("debe retornar un código 200 con mensaje de éxito", async () => {
-        await registerMatch(mockRequest, mockResponse);
-
-        expect(mockResponse.status).toHaveBeenCalledWith(200);
-        expect(mockResponse.send).toHaveBeenCalledWith({
-            description: "Se ha registrado el match exitosamente",
-            title: "Registro exitoso",
-            type: "success",
-        });
-    });
-
-    beforeEach(() => {
-        mockRequest = { body: { userId: 1, userTo: 999 } };
-        mockResponse = {
-            status: jest.fn().mockReturnThis(),
-            send: jest.fn()
-        };
-    });
-
-    it("debe manejar errores y retornar un código 500", async () => {
-        jest.spyOn(console, "error").mockImplementation(() => { });
-
-        jest.spyOn({ registerMatch }, "registerMatch").mockImplementation(async () => {
-            throw new Error("Error simulado");
-        });
-
-        await registerMatch(mockRequest, mockResponse);
-
-        expect(mockResponse.status).toHaveBeenCalledWith(500);
-        expect(mockResponse.send).toHaveBeenCalledWith({
-            title: "Error",
-            description: "Ha ocurrido un error inesperado registrando el match",
             type: "error"
         });
     });

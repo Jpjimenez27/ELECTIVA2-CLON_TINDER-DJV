@@ -2,7 +2,6 @@
 import { getUserPasswordByEmail, registerUserService, verifyExistsUserService } from '../../domain/services/authUserService.js';
 import { validatePassword } from "../../domain/services/hashPasswordService.js";
 import { generateToken } from '../../domain/services/jwtConfiguratorService.js';
-//import { getLoggedUserInformationService } from '../../domain/services/usersService.js';
 
 export const registerUser = async (req, resp) => {
 

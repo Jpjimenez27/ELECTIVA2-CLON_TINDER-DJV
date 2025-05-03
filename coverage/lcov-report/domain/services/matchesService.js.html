@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.66% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/15</span>
+                <span class='fraction'>6/15</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.66% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/15</span>
+                <span class='fraction'>6/15</span>
             </div>
         
             
@@ -96,30 +96,27 @@
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -131,16 +128,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { poolPromise, sql } from "../../infrastructure/databases/mySqlRepository.js";
 &nbsp;
 export const registerMatchService = async (userFrom, userTo) =&gt; {
     try {
         const pool = await poolPromise;
-        const result = await pool.request()
+        const result = <span class="cstat-no" title="statement not covered" >await pool.request()</span>
             .input("option", sql.VarChar(50), "RegisterMatch")
             .input("UserFrom", sql.Int, userFrom)
             .input("UserTo", sql.Int, userTo)
@@ -148,14 +142,14 @@ export const registerMatchService = async (userFrom, userTo) =&gt; {
         const response = <span class="cstat-no" title="statement not covered" >result.recordset[0];</span>
 <span class="cstat-no" title="statement not covered" >        return response;</span>
     } catch (error) {
-        console.log(error);
-        throw new Error("Ha ocurrido un error inesperado obteniendo la información del usuario");
+<span class="cstat-no" title="statement not covered" >        console.log(error);</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error("Ha ocurrido un error inesperado obteniendo la información del usuario");</span>
     }
 }
 &nbsp;
-export const acceptMatchService = <span class="fstat-no" title="function not covered" >as</span>ync (userFrom, userTo,isMatch) =&gt; {
-<span class="cstat-no" title="statement not covered" >    try {</span>
-        const pool = <span class="cstat-no" title="statement not covered" >await poolPromise;</span>
+export const acceptMatchService = async (userFrom, userTo,isMatch) =&gt; {
+    try {
+        const pool = await poolPromise;
         const result = <span class="cstat-no" title="statement not covered" >await pool.request()</span>
             .input("option", sql.VarChar(50), "AcceptMacth")
             .input("UserFrom", sql.Int, userTo)
@@ -168,17 +162,14 @@ export const acceptMatchService = <span class="fstat-no" title="function not cov
 <span class="cstat-no" title="statement not covered" >        console.log(error);</span>
 <span class="cstat-no" title="statement not covered" >        throw new Error("Ha ocurrido un error inesperado obteniendo la información del usuario");</span>
     }
-}
-&nbsp;
-&nbsp;
-&nbsp;</pre></td></tr></table></pre>
+}</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-03T01:29:28.403Z
+                at 2025-05-03T04:56:29.099Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

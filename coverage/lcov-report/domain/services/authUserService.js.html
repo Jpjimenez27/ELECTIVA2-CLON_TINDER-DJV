@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">10.71% </span>
+                <span class="strong">36.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/28</span>
+                <span class='fraction'>11/30</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>1/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">10.71% </span>
+                <span class="strong">36.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/28</span>
+                <span class='fraction'>11/30</span>
             </div>
         
             
@@ -148,7 +148,8 @@
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
 <a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -156,16 +157,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -176,13 +174,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,6 +182,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -202,9 +202,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -240,15 +242,14 @@ import { hashPassword } from "./hashPasswordService.js";
 import { generateGuid } from "./randomStringService.js";
 //import { sendMailActivateAccount } from "./sendMailService.js";
 &nbsp;
-export const registerUserService = <span class="fstat-no" title="function not covered" >as</span>ync (body) =&gt; {
-<span class="cstat-no" title="statement not covered" >    try {</span>
-        const { firstName, middleName, lastName, secondLastName, email, birthDate, gender, country, countryCode, city, height, description, password, hobbies, images } = <span class="cstat-no" title="statement not covered" >body;</span>
-        const activateUrl = <span class="cstat-no" title="statement not covered" >generateGuid();</span>
-        const hashedPssword = <span class="cstat-no" title="statement not covered" >await hashPassword(password);</span>
-        const pool = <span class="cstat-no" title="statement not covered" >await poolPromise;</span>
+export const registerUserService = async (body) =&gt; {
+    try {
+        const { firstName, middleName, lastName, secondLastName, email, birthDate, gender, country, countryCode, city, height, description, password, hobbies, images } = body;
+        const activateUrl = generateGuid();
+        const hashedPssword = await hashPassword(password);
+        const pool = await poolPromise;
 &nbsp;
-&nbsp;
-        const result = <span class="cstat-no" title="statement not covered" >await pool.request()</span>
+        const result = await pool.request()
             .input("option", sql.VarChar(20), "registerUser")
             .input("fisrtName", sql.VarChar(50), firstName.trim())
             .input("middleName", sql.VarChar(50), middleName.trim())
@@ -287,9 +288,11 @@ export const registerUserService = <span class="fstat-no" title="function not co
 <span class="cstat-no" title="statement not covered" >            await uploadBase64ImageToBlob(image.data.split(",")[1], "flamematch", `${imageName}.${image.type}`, image.type);</span>
 &nbsp;
         });
-&nbsp;
+<span class="cstat-no" title="statement not covered" >        await sendMailActivateAccount(`${firstName} ${lastName}`,activateUrl,email);</span>
     } catch (error) {
-<span class="cstat-no" title="statement not covered" >        throw error;</span>
+        console.log(error);
+        
+        throw error;
     }
 }
 &nbsp;
@@ -318,14 +321,14 @@ export const getUserPasswordByEmail = <span class="fstat-no" title="function not
     const response = <span class="cstat-no" title="statement not covered" >result.recordsets[0][0].password;</span>
     const userId = <span class="cstat-no" title="statement not covered" >result.recordsets[0][0].id;</span>
 <span class="cstat-no" title="statement not covered" >    return { response, userId };</span>
-}</pre></td></tr></table></pre>
+} </pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-02T01:58:51.294Z
+                at 2025-05-03T01:29:28.403Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

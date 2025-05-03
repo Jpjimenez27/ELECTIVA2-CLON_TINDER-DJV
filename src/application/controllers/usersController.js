@@ -1,5 +1,5 @@
 import { acceptMatchService, registerMatchService } from "../../domain/services/matchesService.js";
-import { getChatsListService, getLoggedUserInformationService, getUserInformationForMatchService } from "../../domain/services/usersService.js";
+import { getChatsListService, getLoggedUserInformationService, getMessagesService, getUserInformationForMatchService, regigisterChatService } from "../../domain/services/usersService.js";
 
 export const getLoggedUserInformation = async (req, resp) => {
     try {
@@ -18,6 +18,7 @@ export const getLoggedUserInformation = async (req, resp) => {
 export const getUserInformationForMatch = async (req, resp) => {
     try {
         const { userId } = req;
+      
         const response = await getUserInformationForMatchService(userId);
         return resp.status(200).send(response);
     } catch (error) {
@@ -32,9 +33,8 @@ export const getUserInformationForMatch = async (req, resp) => {
 export const registerMatch = async (req, resp) => {
     try {
 
-        const { userTo } = req.body
+        const { userTo } = req.body;
         const { userId } = req;
-        console.log(userId);
         await registerMatchService(userId, userTo);
         return resp.status(200).send({
             title: "Registro exitoso",
@@ -85,6 +85,43 @@ export const getChatsList = async (req, resp) => {
         return resp.status(500).send({
             title: "Error",
             description: "Ha ocurrido un error inesperado registrando el match",
+            type: "error"
+        });
+    }
+}
+
+export const registerChat = async (req, resp) => {
+    try {
+        const { userId } = req;
+        const {idMatch,message}=req.body;
+        await regigisterChatService(userId,idMatch,message);
+        return resp.status(200).send({
+            title: "Registro exitoso",
+            description: "Se ha registrado el mensaje exitosamente",
+            type: "success"
+        });
+    } catch (error) {
+        console.log(error);
+
+        return resp.status(500).send({
+            title: "Error",
+            description: "Ha ocurrido un error inesperado registrando el match",
+            type: "error"
+        });
+    }
+}
+
+export const getMessages = async (req, resp) => {
+    try {    
+        const { idMatch } = req.params;
+      const response=  await getMessagesService(idMatch);
+        return resp.status(200).send(response);
+    } catch (error) {
+        console.log(error);
+
+        return resp.status(500).send({
+            title: "Error",
+            description: "Ha ocurrido un error obteniendo los mensajes",
             type: "error"
         });
     }

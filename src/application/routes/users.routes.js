@@ -1,6 +1,6 @@
 import express from 'express'
 import { verifyToken } from '../middlewares/tokenValidation.js';
-import { acceptMatch, getChatsList, getLoggedUserInformation, getUserInformationForMatch, registerMatch } from '../controllers/usersController.js';
+import { acceptMatch, getChatsList, getLoggedUserInformation, getMessages, getUserInformationForMatch, registerChat, registerMatch } from '../controllers/usersController.js';
 import { validateAccpetMatch, validateRegisterMatch } from '../middlewares/userValidations.js';
 export const usersRouter = express.Router();
 
@@ -9,3 +9,5 @@ usersRouter.get("/getUserinformationformatch", verifyToken, getUserInformationFo
 usersRouter.post("/registermatch", validateRegisterMatch, verifyToken, registerMatch);
 usersRouter.put("/acceptmatch", validateAccpetMatch, verifyToken, acceptMatch);
 usersRouter.get("/getchatslist", verifyToken, getChatsList);
+usersRouter.post("/registerchat", verifyToken, registerChat);
+usersRouter.get("/getmessages/:idMatch", verifyToken, getMessages);

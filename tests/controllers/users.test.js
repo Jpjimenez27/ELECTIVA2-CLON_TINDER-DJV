@@ -89,7 +89,7 @@ describe("registerMatch", () => {
     let mockRequest, mockResponse;
 
     beforeEach(() => {
-        mockRequest = { body: { userId: 1, matchedUserId: 2 } };
+        mockRequest = { body: { userId: 31, userTo: 28 } };
         mockResponse = {
             status: jest.fn().mockReturnThis(),
             send: jest.fn()
@@ -105,6 +105,14 @@ describe("registerMatch", () => {
             title: "Registro exitoso",
             type: "success",
         });
+    });
+
+    beforeEach(() => {
+        mockRequest = { body: { userId: 1, userTo: 999 } };
+        mockResponse = {
+            status: jest.fn().mockReturnThis(),
+            send: jest.fn()
+        };
     });
 
     it("debe manejar errores y retornar un código 500", async () => {

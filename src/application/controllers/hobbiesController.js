@@ -6,9 +6,7 @@ export const getHobbies = async (req, resp) => {
         const result = await pool.request().query('SELECT Id as id, Name as name, Icon as icon from hobbies');
         return resp.status(200).send(result.recordsets[0]);
     } catch (error) {
-        console.log(error);
-        
-        resp.status(500).send({
+      return  resp.status(500).send({
             title: "Error",
             description: "Error inesperado",
             type: "error"

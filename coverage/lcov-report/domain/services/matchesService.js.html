@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for infrastructure/blobstorage/blobStorage.js</title>
+    <title>Code coverage report for domain/services/matchesService.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">infrastructure/blobstorage</a> blobStorage.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">domain/services</a> matchesService.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">38.88% </span>
+                <span class="strong">46.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/18</span>
+                <span class='fraction'>7/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">38.88% </span>
+                <span class="strong">46.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/18</span>
+                <span class='fraction'>7/15</span>
             </div>
         
             
@@ -99,25 +99,13 @@
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
 <a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -125,15 +113,21 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -141,46 +135,43 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { BlobServiceClient } from '@azure/storage-blob';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { poolPromise, sql } from "../../infrastructure/databases/mySqlRepository.js";
 &nbsp;
-const key = "DefaultEndpointsProtocol=https;AccountName=flamematch;AccountKey=VFZu3YbDW4Wq2KTAWMEONSDuPE3zWmFhn71iMJsYNJUFqYBbFdlB8c5uNGFBtnSWsesErdmqFurh+AStnYz/Jg==;EndpointSuffix=core.windows.net";
-const blobServiceClient = BlobServiceClient.fromConnectionString(key);
-&nbsp;
-export const uploadBase64ImageToBlob = async (base64Image, containerName, blobName,type) =&gt; {
+export const registerMatchService = async (userFrom, userTo) =&gt; {
     try {
-        const buffer = Buffer.from(base64Image, 'base64');    
-        const containerClient = blobServiceClient.getContainerClient(containerName);
-<span class="cstat-no" title="statement not covered" >        await containerClient.createIfNotExists({ access: 'container' });</span>
-        
-&nbsp;
-        const blockBlobClient = <span class="cstat-no" title="statement not covered" >containerClient.getBlockBlobClient(blobName);</span>
-    
-&nbsp;
-<span class="cstat-no" title="statement not covered" >        await blockBlobClient.uploadData(buffer, {</span>
-            blobHTTPHeaders: { blobContentType: "image/"+type },
-        });
-    
-<span class="cstat-no" title="statement not covered" >        console.log(`Imagen subida como: ${blobName}`);</span>
-<span class="cstat-no" title="statement not covered" >        return blockBlobClient.url; </span>
+        const pool = await poolPromise;
+        const result = await pool.request()
+            .input("option", sql.VarChar(50), "RegisterMatch")
+            .input("UserFrom", sql.Int, userFrom)
+            .input("UserTo", sql.Int, userTo)
+            .execute("SP_MATCHES");
+        const response = <span class="cstat-no" title="statement not covered" >result.recordset[0];</span>
+<span class="cstat-no" title="statement not covered" >        return response;</span>
     } catch (error) {
         console.log(error);
-        
+        throw new Error("Ha ocurrido un error inesperado obteniendo la información del usuario");
     }
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >socketErrorHandler(</span>callback) {
-<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >as</span>ync (...args) =&gt; {</span>
-      const socket = <span class="cstat-no" title="statement not covered" >args[args.length - 1];</span> // el último argumento debería ser el socket o tener acceso a él
-<span class="cstat-no" title="statement not covered" >      try {</span>
-<span class="cstat-no" title="statement not covered" >        await callback(...args);</span>
-      } catch (err) {
-<span class="cstat-no" title="statement not covered" >        console.error("Error en socket event:", err);</span>
-<span class="cstat-no" title="statement not covered" >        socket.emit("error_message", {</span>
-          message: err.message || "Error interno del servidor.",
-        });
-      }
-    };
-  }</pre></td></tr></table></pre>
+export const acceptMatchService = <span class="fstat-no" title="function not covered" >as</span>ync (userFrom, userTo,isMatch) =&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+        const pool = <span class="cstat-no" title="statement not covered" >await poolPromise;</span>
+        const result = <span class="cstat-no" title="statement not covered" >await pool.request()</span>
+            .input("option", sql.VarChar(50), "AcceptMacth")
+            .input("UserFrom", sql.Int, userTo)
+            .input("UserTo", sql.Int, userFrom)
+            .input("IsMatch",sql.TinyInt,isMatch)
+            .execute("SP_MATCHES");
+ 
+<span class="cstat-no" title="statement not covered" >        return 1;</span>
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >        console.log(error);</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error("Ha ocurrido un error inesperado obteniendo la información del usuario");</span>
+    }
+}
+&nbsp;
+&nbsp;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

@@ -18,7 +18,6 @@ export const sendMailActivateAccount = async (name, urlActive, email) => {
       "templates",
       "SendActivateAccountTemplate.html"
     );
-    console.log(templatePath);
 
     const htmlTemplate = await fs.readFile(templatePath, "utf-8");
 

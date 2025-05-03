@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1746248189204" clover="3.2.0">
-  <project timestamp="1746248189205" name="All files">
-    <metrics statements="168" coveredstatements="94" conditionals="2" coveredconditionals="0" methods="24" coveredmethods="16" elements="194" coveredelements="110" complexity="0" loc="168" ncloc="168" packages="4" files="10" classes="10"/>
+<coverage generated="1746272493325" clover="3.2.0">
+  <project timestamp="1746272493325" name="All files">
+    <metrics statements="167" coveredstatements="93" conditionals="2" coveredconditionals="0" methods="24" coveredmethods="16" elements="193" coveredelements="109" complexity="0" loc="167" ncloc="167" packages="4" files="10" classes="10"/>
     <package name="application.controllers">
-      <metrics statements="55" coveredstatements="54" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
-      <file name="hobbiesController.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\application\controllers\hobbiesController.js">
-        <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="55" coveredstatements="53" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
+      <file name="hobbiesController.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\application\controllers\hobbiesController.js">
+        <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
       </file>
-      <file name="usersController.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\application\controllers\usersController.js">
+      <file name="usersController.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\application\controllers\usersController.js">
         <metrics statements="49" coveredstatements="49" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
         <line num="4" count="3" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
@@ -68,7 +68,7 @@
     </package>
     <package name="domain.services">
       <metrics statements="95" coveredstatements="28" conditionals="2" coveredconditionals="0" methods="13" coveredmethods="6"/>
-      <file name="hashPasswordService.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\hashPasswordService.js">
+      <file name="hashPasswordService.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\hashPasswordService.js">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
@@ -80,14 +80,14 @@
         <line num="13" count="2" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
       </file>
-      <file name="jwtConfiguratorService.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\jwtConfiguratorService.js">
+      <file name="jwtConfiguratorService.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\jwtConfiguratorService.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
       </file>
-      <file name="matchesService.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\matchesService.js">
+      <file name="matchesService.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\matchesService.js">
         <metrics statements="15" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="3" count="4" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
@@ -105,12 +105,12 @@
         <line num="31" count="0" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
       </file>
-      <file name="randomStringService.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\randomStringService.js">
+      <file name="randomStringService.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\randomStringService.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
       </file>
-      <file name="usersService.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\usersService.js">
+      <file name="usersService.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\domain\services\usersService.js">
         <metrics statements="65" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="7" coveredmethods="0"/>
         <line num="3" count="4" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
@@ -180,9 +180,9 @@
       </file>
     </package>
     <package name="infrastructure.blobstorage">
-      <metrics statements="12" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="blobStorage.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\infrastructure\blobstorage\blobStorage.js">
-        <metrics statements="12" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="11" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="blobStorage.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\infrastructure\blobstorage\blobStorage.js">
+        <metrics statements="11" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
@@ -193,18 +193,17 @@
         <line num="13" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="23" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
       </file>
     </package>
     <package name="infrastructure.databases">
       <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-      <file name="config.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\infrastructure\databases\config.js">
+      <file name="config.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\infrastructure\databases\config.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="7" type="stmt"/>
         <line num="4" count="7" type="stmt"/>
       </file>
-      <file name="mySqlRepository.js" path="C:\Users\juanp\Documents\GitHub\ELECTIVA2-CLON_TINDER-DJV\src\infrastructure\databases\mySqlRepository.js">
+      <file name="mySqlRepository.js" path="C:\Users\Diego Madrid\Desktop\Proyecto tinder\ELECTIVA2-CLON_TINDER-DJV\src\infrastructure\databases\mySqlRepository.js">
         <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="4" count="7" type="stmt"/>
         <line num="7" count="1" type="stmt"/>

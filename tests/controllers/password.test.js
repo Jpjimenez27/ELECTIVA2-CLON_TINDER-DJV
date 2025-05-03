@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 jest.mock("bcrypt");
 
 describe("hashPassword", () => {
-    it("debe generar un hash válido para una contraseña", async () => {
+    it("it must generate a valid password", async () => {
         bcrypt.hash.mockResolvedValueOnce("hashed123");
 
         const result = await hashPassword("contra123");
@@ -13,7 +13,7 @@ describe("hashPassword", () => {
         expect(result).toBe("hashed123");
     });
 
-    it("debe manejar errores correctamente", async () => {
+    it("it must handle errors", async () => {
         jest.spyOn(console, "error").mockImplementation(() => {}); 
         bcrypt.hash.mockRejectedValueOnce(new Error("Error en bcrypt"));
 
@@ -30,7 +30,7 @@ describe("Validate password", () => {
         expect(result).toBe(true);
     });
 
-    it("debe retornar false si la contraseña es incorrecta", async () => {
+    it("it must return false when the password is wrong", async () => {
         bcrypt.compare.mockResolvedValueOnce(false); 
 
         const result = await validatePassword("wrongPass", "hashed123");
@@ -38,7 +38,7 @@ describe("Validate password", () => {
         expect(result).toBe(false);
     });
 
-    it("debe manejar errores correctamente", async () => {
+    it("it must handle errors", async () => {
         jest.spyOn(console, "error").mockImplementation(() => {});
         bcrypt.compare.mockRejectedValueOnce(new Error("Error en bcrypt"));
 

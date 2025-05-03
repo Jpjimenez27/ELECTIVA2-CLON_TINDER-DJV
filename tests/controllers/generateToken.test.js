@@ -1,7 +1,7 @@
 import { generateToken } from "../../src/domain/services/jwtConfiguratorService";
 import jwt from "jsonwebtoken";
 
-jest.mock("jsonwebtoken");
+jest.mock("jwt");
 
 describe("generateToken", () => {
     const mockUserId = 123;
@@ -10,7 +10,7 @@ describe("generateToken", () => {
         process.env.JWT_SECRET_KEY = "test_secret_key";
     });
 
-    it("debe generar un token válido", () => {
+    it("it must generate a valid token", () => {
         jwt.sign.mockReturnValueOnce("mocked_token"); 
 
         const result = generateToken(mockUserId);
@@ -19,7 +19,7 @@ describe("generateToken", () => {
         expect(result).toBe("mocked_token"); 
     });
 
-    it("debe manejar errores correctamente", () => {
+    it("it must handle errors", () => {
         jwt.sign.mockImplementationOnce(() => {
             throw new Error("Error en generación de token");
         });

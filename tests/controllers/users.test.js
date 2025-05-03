@@ -14,7 +14,7 @@ describe("getLoggedUserInformation", () => {
         };
     });
 
-    it("debe retornar código 200 con la información del usuario", async () => {
+    it("it must return 200 code and information from user", async () => {
         const mockUserInfo = {
             id: 123,
             name: "Juan Pérez",
@@ -29,7 +29,7 @@ describe("getLoggedUserInformation", () => {
         expect(mockResponse.send).toHaveBeenCalledWith(mockUserInfo);
     });
 
-    it("debe retornar código 500 en caso de error", async () => {
+    it("it must handle errors", async () => {
         getLoggedUserInformationService.mockRejectedValue(new Error("Error inesperado"));
 
         await getLoggedUserInformation(mockRequest, mockResponse);
@@ -54,7 +54,7 @@ describe("getUserInformationForMatch", () => {
         };
     });
 
-    it("debe retornar código 200 con la información del usuario", async () => {
+    it("it must return 200 code and information from user", async () => {
         const mockUserInfo = {
             id: 123,
             name: "Juan Pérez",
@@ -70,7 +70,7 @@ describe("getUserInformationForMatch", () => {
         expect(mockResponse.send).toHaveBeenCalledWith(mockUserInfo);
     });
 
-    it("debe retornar código 500 en caso de error", async () => {
+    it("it must handle errors", async () => {
         getUserInformationForMatchService.mockRejectedValue(new Error("Error inesperado"));
 
         await getUserInformationForMatch(mockRequest, mockResponse);

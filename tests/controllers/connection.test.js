@@ -3,8 +3,8 @@ import sql from "mssql";
 
 jest.mock("mssql");
 
-describe("poolPromise", () => {
-    it("debe conectar exitosamente a SQL Server", async () => {
+describe("pool Promise", () => {
+    it("it must connect succesfully to SQL server ", async () => {
         const mockPool = { connect: jest.fn().mockResolvedValue("Mocked Pool Connection") };
         sql.ConnectionPool.mockImplementation(() => mockPool); 
 
@@ -14,7 +14,7 @@ describe("poolPromise", () => {
         expect(result).toBe("Mocked Pool Connection");
     });
 
-    it("debe manejar errores en la conexión", async () => {
+    it("it must handle conexion errors", async () => {
         const mockError = new Error("Error de conexión");
         const mockPool = { connect: jest.fn().mockRejectedValue(mockError) };
         sql.ConnectionPool.mockImplementation(() => mockPool); 

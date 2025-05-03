@@ -1,7 +1,6 @@
 import { body, check, param } from 'express-validator'
 import { validateResult } from '../../../helpers/validateHelper.js'
 
-
 export const validateRegisterUser = [
 
     body("firstName").exists().notEmpty().isString().withMessage("Primer nombre es obligatorio"),

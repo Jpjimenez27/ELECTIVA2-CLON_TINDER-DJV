@@ -28,7 +28,7 @@ describe("getLoggedUserInformationService", () => {
         poolPromise.then.mockResolvedValue(mockPool);
     });
 
-    it("debe retornar la información del usuario correctamente", async () => {
+    it("it must return information from user", async () => {
         const mockResponse = { userId: "user123", name: "Juan", age: 25 };
         mockRequest.execute.mockResolvedValueOnce({ recordset: [mockResponse] });
 
@@ -48,7 +48,7 @@ describe("getLoggedUserInformationService", () => {
         });
     });
 
-    it("debe manejar errores correctamente y lanzar una excepción", async () => {
+    it("it must handle errors", async () => {
         mockRequest.execute.mockRejectedValueOnce(new Error("Error en la base de datos"));
 
         await expect(getLoggedUserInformationService("user123")).rejects.toThrow(

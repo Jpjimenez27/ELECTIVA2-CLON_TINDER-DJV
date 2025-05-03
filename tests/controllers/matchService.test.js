@@ -8,7 +8,7 @@ jest.mock("../../src/infrastructure/databases/mySqlRepository", () => ({
     },
 }));
 
-describe("registerMatchService", () => {
+describe("register Match Service", () => {
     let mockPool, mockRequest;
 
     beforeEach(() => {
@@ -24,7 +24,7 @@ describe("registerMatchService", () => {
         poolPromise.then.mockResolvedValue(mockPool);
     });
 
-    it("debe registrar un match correctamente y retornar la respuesta", async () => {
+    it("it must register a match succesfully and return a response", async () => {
         const mockResponse = { matchId: 1, status: "success" };
         mockRequest.execute.mockResolvedValueOnce({ recordset: [mockResponse] });
 
@@ -37,7 +37,7 @@ describe("registerMatchService", () => {
         expect(result).toEqual(mockResponse);
     });
 
-    it("debe manejar errores correctamente y lanzar una excepción", async () => {
+    it("it must handle errors", async () => {
         mockRequest.execute.mockRejectedValueOnce(new Error("Error en la base de datos"));
 
         await expect(registerMatchService("user123", "user456")).rejects.toThrow(
@@ -48,7 +48,7 @@ describe("registerMatchService", () => {
     });
 });
 
-describe("acceptMatchService", () => {
+describe("accept Match Service", () => {
     let mockPool, mockRequest;
 
     beforeEach(() => {
@@ -64,7 +64,7 @@ describe("acceptMatchService", () => {
         poolPromise.then.mockResolvedValue(mockPool);
     });
 
-    it("debe aceptar un match correctamente", async () => {
+    it("it must acept a mtach succesfully", async () => {
         mockRequest.execute.mockResolvedValueOnce({ recordset: [{}] });
 
         const result = await acceptMatchService("user123", "user456", 1);
@@ -77,7 +77,7 @@ describe("acceptMatchService", () => {
         expect(result).toBe(1);
     });
 
-    it("debe manejar errores correctamente y lanzar una excepción", async () => {
+    it("it must handle errors", async () => {
         mockRequest.execute.mockRejectedValueOnce(new Error("Error en la base de datos"));
 
         await expect(acceptMatchService("user123", "user456", 1)).rejects.toThrow(

@@ -14,7 +14,7 @@ describe("Verify exists user", () => {
         };
     });
 
-    it("debe retornar un código 200 con la respuesta del servicio", async () => {
+    it("it must return a 200 code service", async () => {
         verifyExistsUserService.mockResolvedValue({ exists: true });
 
         await verifyExistsUser(mockRequest, mockResponse);
@@ -23,7 +23,7 @@ describe("Verify exists user", () => {
         expect(mockResponse.send).toHaveBeenCalledWith({ response: { exists: true } });
     });
 
-    it("debe manejar errores y retornar un código 500", async () => {
+    it("it must handle errors and return 500 code", async () => {
         verifyExistsUserService.mockRejectedValue(new Error("Error simulado"));
 
         await verifyExistsUser(mockRequest, mockResponse);

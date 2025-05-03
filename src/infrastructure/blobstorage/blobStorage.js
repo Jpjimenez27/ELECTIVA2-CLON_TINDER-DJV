@@ -16,8 +16,7 @@ export const uploadBase64ImageToBlob = async (base64Image, containerName, blobNa
         await blockBlobClient.uploadData(buffer, {
             blobHTTPHeaders: { blobContentType: "image/"+type },
         });
-    
-        console.log(`Imagen subida como: ${blobName}`);
+
         return blockBlobClient.url; 
     } catch (error) {
         console.log(error);

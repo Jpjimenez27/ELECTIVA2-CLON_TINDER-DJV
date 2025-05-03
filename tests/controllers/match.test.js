@@ -16,7 +16,7 @@ describe("registerMatch", () => {
         };
     });
 
-    it("debe registrar un match exitosamente", async () => {
+    it("it must register a match succesfully", async () => {
         registerMatchService.mockResolvedValueOnce();
 
         await registerMatch(req, res);
@@ -29,7 +29,7 @@ describe("registerMatch", () => {
         });
     });
 
-    it("debe manejar errores correctamente", async () => {
+    it("it must handle conexion errors", async () => {
         registerMatchService.mockRejectedValueOnce(new Error("Error interno"));
 
         await registerMatch(req, res);
@@ -43,7 +43,7 @@ describe("registerMatch", () => {
     });
 });
 
-describe("acceptMatch", () => {
+describe("accept Match", () => {
     let req, res;
 
     beforeEach(() => {
@@ -56,7 +56,7 @@ describe("acceptMatch", () => {
         };
     });
 
-    it("debe actualizar un match exitosamente", async () => {
+    it("it must a update a match succesfully", async () => {
         acceptMatchService.mockResolvedValueOnce();
 
         await acceptMatch(req, res);
@@ -69,7 +69,7 @@ describe("acceptMatch", () => {
         });
     });
 
-    it("debe manejar errores correctamente", async () => {
+    it("it must handle conexion errors", async () => {
         acceptMatchService.mockRejectedValueOnce(new Error("Error interno"));
 
         await acceptMatch(req, res);

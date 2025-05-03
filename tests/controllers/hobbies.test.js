@@ -10,7 +10,7 @@ describe("getHobbies", () => {
         };
     });
 
-    it("debe retornar un código 200 con la lista de hobbies", async () => {
+    it("it must return a hobbies list", async () => {
         const mockPool = {
             request: jest.fn().mockReturnThis(),
             query: jest.fn().mockResolvedValue({

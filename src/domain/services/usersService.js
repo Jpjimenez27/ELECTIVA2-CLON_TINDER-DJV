@@ -72,9 +72,7 @@ export const getHobbiesByUserId = async (userId) => {
 }
 
 export const regigisterChatService = async (userId,idMatch,message) => {
-    try {
-        console.log(message);
-        
+    try {        
         const pool = await poolPromise;
         const result = await pool.request()
             .input("option", sql.VarChar(50), "RegisterMessage")

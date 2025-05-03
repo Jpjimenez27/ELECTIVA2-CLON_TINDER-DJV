@@ -11,7 +11,7 @@ describe("User register", () => {
         };
     });
 
-    it("debe retornar un código 201 con mensaje de éxito", async () => {
+    it("it must return a 201 code", async () => {
         await registerUser(mockRequest, mockResponse);
 
         expect(mockResponse.status).toHaveBeenCalledWith(201);
@@ -22,7 +22,7 @@ describe("User register", () => {
         });
     });
 
-    it("debe manejar errores y retornar un código 500", async () => {
+    it("it must handle errors", async () => {
         jest.spyOn(global.console, "error").mockImplementation(() => {}); 
     
         jest.spyOn(global, "registerUser").mockImplementation(async () => {

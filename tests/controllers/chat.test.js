@@ -3,7 +3,7 @@ import { getChatsListService, regigisterChatService, getMessagesService } from "
 
 jest.mock("../../src/domain/services/usersService"); // Mock del servicio
 
-describe("getChatsList", () => {
+describe("get chats list", () => {
     let req, res;
 
     beforeEach(() => {
@@ -15,7 +15,7 @@ describe("getChatsList", () => {
         };
     });
 
-    it("debe retornar la lista de chats correctamente", async () => {
+    it("it must return a chat list", async () => {
         const mockResponse = [
             { chatId: "chat1", users: [28, 31] },
             { chatId: "chat2", users: [28, 31] },
@@ -28,8 +28,8 @@ describe("getChatsList", () => {
         expect(res.send).toHaveBeenCalledWith(mockResponse);
     });
 
-    it("debe manejar errores correctamente", async () => {
-        getChatsListService.mockRejectedValueOnce(new Error("Error interno"));
+    it("it must handle errors", async () => {
+        getChatsListService.mockRejectedValueOnce(new Error("internal error"));
 
         await getChatsList(req, res);
 

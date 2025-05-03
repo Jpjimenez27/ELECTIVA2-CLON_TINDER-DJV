@@ -7,7 +7,7 @@ import { hobbiesRouter } from "./src/application/routes/hobbies.routes.js";
 import { usersRouter } from "./src/application/routes/users.routes.js";
 import swaggerUI from "swagger-ui-express";
 import fs from "fs";
-import { socketErrorHandler } from "./src/infrastructure/blobstorage/blobStorage.js";
+
 
 const app = express();
 const server = http.createServer(app);
@@ -34,22 +34,22 @@ app.use("/api/users", usersRouter);
 io.on("connection", (socket) => {
   console.log("Nuevo cliente conectado: " + socket.id);
 
-  socket.on("join_room", socketErrorHandler(async (room) => {
+  socket.on("join_room", async (room) => {
     socket.join(room);
     console.log(`Usuario unido a la sala ${room}`);
-  }));
+  });
 
-  socket.on("send_message", socketErrorHandler(async ({ room, body }) => {
+  socket.on("send_message", async ({ room, body }) => {
     io.to(room).emit("receive_message", body);
-  }));
+  });
 
-  socket.on("send_match", socketErrorHandler(async ({ room, body }) => {
+  socket.on("send_match",async ({ room, body }) => {
     io.to(room).emit("receive_match", body);
-  }));
+  });
 
-  socket.on("send_messages", socketErrorHandler(async ({ room, body }) => {
+  socket.on("send_messages", async ({ room, body }) => {
     io.to(room).emit("receive_messages", body);
-  }));
+  });
 
   socket.on("disconnect", () => {
     console.log("Cliente desconectado: " + socket.id);

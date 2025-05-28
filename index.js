@@ -7,7 +7,8 @@ import { hobbiesRouter } from "./src/application/routes/hobbies.routes.js";
 import { usersRouter } from "./src/application/routes/users.routes.js";
 import swaggerUI from "swagger-ui-express";
 import fs from "fs";
-
+import cron from "node-cron";
+import { sendMailActivateAccount } from "./src/domain/services/sendMailService.js";
 
 const app = express();
 const server = http.createServer(app);
@@ -55,6 +56,13 @@ io.on("connection", (socket) => {
     console.log("Cliente desconectado: " + socket.id);
   });
 });
+
+// cron.schedule("* * * * *",async=>{
+//   console.log("ejecutado");
+  
+//   sendMailActivateAccount("Diego Madrid","1234","diego.madrid@correo.tdea.edu.co");
+// })
+
 server.listen(PORT, () => {
   console.log("Express.js está corriendo en el puerto " + PORT);
 });

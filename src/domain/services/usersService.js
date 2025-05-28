@@ -3,19 +3,27 @@ import { poolPromise, sql } from "../../infrastructure/databases/mySqlRepository
 export const getLoggedUserInformationService = async (userId) => {
     try {
         const pool = await poolPromise;
-        const result = await pool.request()
-            .input("option", sql.VarChar(50), "GetUserInformationById")
-            .input("Id", sql.Int, userId)
-            .execute("SP_USERS");
-        const response = result.recordset[0];
-        response.images = await getUserImagesService(userId);
-        response.hobbies = await getHobbiesByUserId(userId);
+
+        const [userResult, images, hobbies] = await Promise.all([
+            pool.request()
+                .input("option", sql.VarChar(50), "GetUserInformationById")
+                .input("Id", sql.Int, userId)
+                .execute("SP_USERS"),
+            getUserImagesService(userId),
+            getHobbiesByUserId(userId)
+        ]);
+
+        const response = userResult.recordset[0];
+        response.images = images;
+        response.hobbies = hobbies;
+
         return response;
     } catch (error) {
         console.log(error);
         throw new Error("Ha ocurrido un error inesperado obteniendo la información del usuario");
     }
-}
+};
+
 
 
 export const getUserImagesService = async (userId) => {
@@ -39,22 +47,30 @@ export const getUserInformationForMatchService = async (userId) => {
             .input("option", sql.VarChar(50), "GetUserInformationForMatch")
             .input("Id", sql.Int, userId)
             .execute("SP_USERS");
+
         const response = result.recordset[0];
-       if(response==undefined){
-        return null;
-       }
-        
-        const idUserMatch = result.recordset[0].id;
-       
-        
-        response.images = await getUserImagesService(idUserMatch);
-        response.hobbies = await getHobbiesByUserId(idUserMatch);
+        if (!response) {
+            return null;
+        }
+
+        const idUserMatch = response.id;
+
+        // Ejecutar en paralelo
+        const [images, hobbies] = await Promise.all([
+            getUserImagesService(idUserMatch),
+            getHobbiesByUserId(idUserMatch)
+        ]);
+
+        response.images = images;
+        response.hobbies = hobbies;
+
         return response;
     } catch (error) {
-        console.log(error);
+        console.error(error);
         throw new Error("Ha ocurrido un error inesperado obteniendo la información del usuario");
     }
-}
+};
+
 
 export const getHobbiesByUserId = async (userId) => {
     try {
@@ -71,14 +87,14 @@ export const getHobbiesByUserId = async (userId) => {
     }
 }
 
-export const regigisterChatService = async (userId,idMatch,message) => {
-    try {        
+export const regigisterChatService = async (userId, idMatch, message) => {
+    try {
         const pool = await poolPromise;
         const result = await pool.request()
             .input("option", sql.VarChar(50), "RegisterMessage")
             .input("Id", sql.Int, userId)
             .input("Message", sql.NChar(250), message)
-            .input("IdMatch", sql.Int, idMatch)   
+            .input("IdMatch", sql.Int, idMatch)
             .execute("SP_USERS");
         const response = result.recordset;
         return response;

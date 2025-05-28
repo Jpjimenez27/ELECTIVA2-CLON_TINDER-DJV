@@ -16,7 +16,7 @@ export const sendMailActivateAccount = async (name, urlActive, email) => {
       "..",
       "application",
       "templates",
-      "SendActivateAccountTemplate.html"
+      "sendMailRequestFollow.html"
     );
 
     const htmlTemplate = await fs.readFile(templatePath, "utf-8");

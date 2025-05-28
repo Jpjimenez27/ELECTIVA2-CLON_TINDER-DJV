@@ -6,9 +6,14 @@ import { sendMailActivateAccount } from "./sendMailService.js";
 
 export const registerUserService = async (body) => {
     try {
-        const { firstName, middleName, lastName, secondLastName, email, birthDate, gender, country, countryCode, city, height, description, password, hobbies, images } = body;
+        const {
+            firstName, middleName, lastName, secondLastName,
+            email, birthDate, gender, country, countryCode,
+            city, height, description, password, hobbies, images
+        } = body;
+
         const activateUrl = generateGuid();
-        const hashedPssword = await hashPassword(password);
+        const hashedPassword = await hashPassword(password);
         const pool = await poolPromise;
 
         const result = await pool.request()
@@ -25,19 +30,23 @@ export const registerUserService = async (body) => {
             .input("city", sql.VarChar(50), city.trim())
             .input("height", sql.Int, height)
             .input("description", sql.NChar, description.trim())
-            .input("password", sql.VarChar(100), hashedPssword)
+            .input("password", sql.VarChar(100), hashedPassword)
             .input("urlActivateUser", sql.VarChar(100), activateUrl)
             .execute('SP_USERS');
+
         const userId = result.recordsets[0][0].UserId;
-        hobbies.forEach(async hobbie => {
-            await pool.request()
+
+        // Insert hobbies in parallel
+        const hobbiesPromises = hobbies.map(hobbie =>
+            pool.request()
                 .input("Option", sql.VarChar(20), "InsertUserHobbie")
                 .input("IdHobbie", sql.Int, hobbie)
                 .input("IdUser", sql.Int, userId)
-                .execute('SP_HOBBIES');
-        });
+                .execute('SP_HOBBIES')
+        );
 
-        images.forEach(async image => {
+        // Insert images and upload them in parallel
+        const imagesPromises = images.map(async image => {
             const imageName = generateGuid();
 
             await pool.request()
@@ -47,16 +56,25 @@ export const registerUserService = async (body) => {
                 .input("Main", sql.TinyInt, image.mainImage)
                 .input("IdUser", sql.TinyInt, userId)
                 .execute('SP_IMAGES');
-            await uploadBase64ImageToBlob(image.data.split(",")[1], "flamematch", `${imageName}.${image.type}`, image.type);
 
+            await uploadBase64ImageToBlob(
+                image.data.split(",")[1],
+                "flamematch",
+                `${imageName}.${image.type}`,
+                image.type
+            );
         });
-        await sendMailActivateAccount(`${firstName} ${lastName}`,activateUrl,email);
+
+        await Promise.all([...hobbiesPromises, ...imagesPromises]);
+
+        // Send activation email
+        await sendMailActivateAccount(`${firstName} ${lastName}`, activateUrl, email);
+
     } catch (error) {
-        console.log(error);
-        
+        console.error(error);
         throw error;
     }
-}
+};
 
 export const verifyExistsUserService = async (email) => {
 

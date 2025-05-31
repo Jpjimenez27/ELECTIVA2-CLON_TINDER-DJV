@@ -57,11 +57,11 @@ io.on("connection", (socket) => {
   });
 });
 
-// cron.schedule("* * * * *",async=>{
-//   console.log("ejecutado");
+cron.schedule("* * * * *",async=>{
+  console.log("ejecutado");
   
-//   sendMailActivateAccount("Diego Madrid","1234","diego.madrid@correo.tdea.edu.co");
-// })
+  sendMailActivateAccount("Diego Madrid","1234","diego.madrid@correo.tdea.edu.co");
+})
 
 server.listen(PORT, () => {
   console.log("Express.js está corriendo en el puerto " + PORT);

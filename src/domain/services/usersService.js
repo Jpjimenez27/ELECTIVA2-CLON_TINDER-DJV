@@ -138,3 +138,36 @@ export const getMessagesService = async (matchId) => {
         throw new Error("Ha ocurrido un error inesperado obteniendo la información del usuario");
     }
 }
+
+export const getUserInformationForMatchServiceFiler = async (userId, country, city) => {
+    try {
+        const pool = await poolPromise;
+        const result = await pool.request()
+            .input("option", sql.VarChar(50), "GetUserInformationForMatchFilter")
+            .input("Id", sql.Int, userId)
+            .input("city", sql.VarChar(50), city)
+            .input("country", sql.VarChar(50), country)
+            .execute("SP_USERS");
+
+        const response = result.recordset[0];
+        if (!response) {
+            return null;
+        }
+
+        const idUserMatch = response.id;
+
+        // Ejecutar en paralelo
+        const [images, hobbies] = await Promise.all([
+            getUserImagesService(idUserMatch),
+            getHobbiesByUserId(idUserMatch)
+        ]);
+
+        response.images = images;
+        response.hobbies = hobbies;
+
+        return response;
+    } catch (error) {
+        console.error(error);
+        throw new Error("Ha ocurrido un error inesperado obteniendo la información del usuario");
+    }
+};

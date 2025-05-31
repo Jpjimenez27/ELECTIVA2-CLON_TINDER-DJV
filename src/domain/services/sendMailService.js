@@ -41,7 +41,7 @@ export const sendMailActivateAccount = async (name, urlActive, email) => {
     const mailOptions = {
       from: "flamematchapp07@gmail.com",
       to: email,
-      subject: "Activa tu cuenta",
+      subject: "Recibiste varios likes",
       html: htmlContent,
     };
 
